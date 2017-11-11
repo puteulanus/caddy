@@ -8,5 +8,7 @@ RUN wget -O caddy.tar.gz 'https://caddyserver.com/download/linux/amd64' \
     && mkdir -p /etc/caddy \
     && touch /etc/caddy/Caddyfile
 
+VOLUME /etc/caddy/
+EXPOSE 80 443
 ENV CONFIG_PATH /etc/caddy/Caddyfile
-CMD caddy
+CMD caddy -c "$CONFIG_PATH"
