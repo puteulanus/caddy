@@ -6,7 +6,7 @@ RUN wget -O caddy.tar.gz 'https://caddyserver.com/download/linux/amd64' \
     && mv caddy /usr/bin/caddy \
     && rm -f caddy.tar.gz \
     && mkdir -p /etc/caddy \
-    && touch /etc/caddy/Caddyfile
+    && echo ':80' /etc/caddy/Caddyfile
 
 VOLUME /etc/caddy/
 EXPOSE 80 443
